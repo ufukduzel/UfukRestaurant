@@ -5,7 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{F252DA67-C1B4-4648-8D06-78E24AB1D7B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ufuk.Web", "Ufuk.Web\Ufuk.Web.csproj", "{457E89A9-D039-4521-B9B6-34820A49D0BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ufuk.Web", "Ufuk.Web\Ufuk.Web.csproj", "{457E89A9-D039-4521-B9B6-34820A49D0BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3F52D7F0-64ED-42D1-9582-D91F8F35BABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ufuk.Services.ProductAPI", "Ufuk.Services.ProductAPI\Ufuk.Services.ProductAPI.csproj", "{AE8FBE0A-A990-4E63-81E8-1364175895BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{457E89A9-D039-4521-B9B6-34820A49D0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{457E89A9-D039-4521-B9B6-34820A49D0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{457E89A9-D039-4521-B9B6-34820A49D0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{457E89A9-D039-4521-B9B6-34820A49D0BE} = {F252DA67-C1B4-4648-8D06-78E24AB1D7B9}
+		{AE8FBE0A-A990-4E63-81E8-1364175895BC} = {3F52D7F0-64ED-42D1-9582-D91F8F35BABC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC171812-95FB-419E-AF80-DCCD02E367AC}
