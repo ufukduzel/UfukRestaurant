@@ -13,5 +13,10 @@ namespace Ufuk.Services.ProductAPI.DbContexts
         }
         //8th step.
         public DbSet<Product> Products { get; set; }
+
+        //9th step.
+        //Package Manager Console (Default project: Services\Ufuk.Services.ProductAPI)
+        //add-migration AddProductModelToDb
+        //update-database
     }
 }
