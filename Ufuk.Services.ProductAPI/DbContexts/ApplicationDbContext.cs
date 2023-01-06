@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Ufuk.Services.ProductAPI.Models;
 
 namespace Ufuk.Services.ProductAPI.DbContexts
 {
@@ -10,5 +11,7 @@ namespace Ufuk.Services.ProductAPI.DbContexts
         {
 
         }
+        //8th step.
+        public DbSet<Product> Products { get; set; }
     }
 }
