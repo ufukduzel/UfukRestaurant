@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ufuk.Services.ProductAPI.Models;
+using Ufuk.Services.ProductAPI.Models.Dto;
 
 namespace Ufuk.Services.ProductAPI.DbContexts
 {

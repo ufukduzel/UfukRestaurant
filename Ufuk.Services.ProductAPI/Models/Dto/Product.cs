@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Ufuk.Services.ProductAPI.Models
+namespace Ufuk.Services.ProductAPI.Models.Dto
 {
     public class Product
     {
