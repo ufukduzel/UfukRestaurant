@@ -12,6 +12,8 @@ namespace Ufuk.Services.ProductAPI
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
+                //config.CreateMap<ProductDto, Product>().ReverseMap();
+                //You can also use ReverseMap here, that will automatically add reverse mapping
                 config.CreateMap<ProductDto, Product>();
                 config.CreateMap<Product, ProductDto>();
             });
