@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Ufuk.Services.ProductAPI.DbContexts;
+using Ufuk.Services.ProductAPI.Models.Dto;
 using Ufuk.Services.ProductAPI.Models.Dtos;
 
 namespace Ufuk.Services.ProductAPI.Repository
@@ -26,14 +28,17 @@ namespace Ufuk.Services.ProductAPI.Repository
             throw new NotImplementedException();
         }
 
-        public Task<ProductDto> GetProductById(int productId)
+        //22th step.
+        public async Task<ProductDto> GetProductById(int productId)
         {
-            throw new NotImplementedException();
+            Product product = await _db.Products.Where(x => x.ProductId == productId).FirstOrDefaultAsync();
+            return _mapper.Map<ProductDto>(product);
         }
-
-        public Task<IEnumerable<ProductDto>> GetProducts()
+        public async Task<IEnumerable<ProductDto>> GetProducts()
         {
-            throw new NotImplementedException();
+            //IEnumerable<Product> productList = await _db.Products.ToListAsync();
+            List<Product> productList = await _db.Products.ToListAsync();
+            return _mapper.Map<List<ProductDto>>(productList);
         }
     }
 }
