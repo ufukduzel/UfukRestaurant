@@ -18,9 +18,20 @@ namespace Ufuk.Services.ProductAPI.Repository
             _mapper = mapper;
         }
 
-        public Task<ProductDto> CreateUpdateProduct(ProductDto productDto)
+        //24th step.
+        public async Task<ProductDto> CreateUpdateProduct(ProductDto productDto)
         {
-            throw new NotImplementedException();
+            Product product = _mapper.Map<ProductDto, Product>(productDto);
+            if (product.ProductId > 0)
+            {
+                _db.Products.Update(product);
+            }
+            else
+            {
+                _db.Products.Add(product);
+            }
+            await _db.SaveChangesAsync();
+            return _mapper.Map<Product, ProductDto>(product);
         }
 
         //23th step.
