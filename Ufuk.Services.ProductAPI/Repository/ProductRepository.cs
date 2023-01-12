@@ -23,9 +23,24 @@ namespace Ufuk.Services.ProductAPI.Repository
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteProduct(int productId)
+        //23th step.
+        public async Task<bool> DeleteProduct(int productId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Product product = await _db.Products.FirstOrDefaultAsync(u => u.ProductId == productId);
+                if (product == null)
+                {
+                    return false;
+                }
+                _db.Products.Remove(product);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         //22th step.
