@@ -35,7 +35,27 @@ namespace Ufuk.Services.ProductAPI.Controllers
                 _response.ErrorMessage
                     = new List<string>() { ex.ToString() };
             }
-            //31th step.
+            //31st step.
+            return _response;
+        }
+
+        //32nd step.
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<object> Get(int id)
+        {
+            //33rd step.
+            try
+            {
+                ProductDto productDto = await _productRepository.GetProductById(id);
+                _response.Result = productDto;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessage
+                    = new List<string>() { ex.ToString() };
+            }
             return _response;
         }
     }
