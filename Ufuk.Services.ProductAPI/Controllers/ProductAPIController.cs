@@ -41,7 +41,7 @@ namespace Ufuk.Services.ProductAPI.Controllers
 
         //32nd step.
         [HttpGet]
-        [Route("{id}")]
+        //[Route("{id}")]
         public async Task<object> Get(int id)
         {
             //33rd step.
@@ -49,6 +49,24 @@ namespace Ufuk.Services.ProductAPI.Controllers
             {
                 ProductDto productDto = await _productRepository.GetProductById(id);
                 _response.Result = productDto;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessage
+                    = new List<string>() { ex.ToString() };
+            }
+            return _response;
+        }
+
+        //34th step.
+        [HttpPost]
+        public async Task<object> Post([FromBody] ProductDto productDto)
+        {
+            try
+            {
+                ProductDto model = await _productRepository.CreateUpdateProduct(productDto);
+                _response.Result = model;
             }
             catch (Exception ex)
             {
