@@ -41,7 +41,7 @@ namespace Ufuk.Services.ProductAPI.Controllers
 
         //32nd step.
         [HttpGet]
-        //[Route("{id}")]
+        [Route("{id}")]
         public async Task<object> Get(int id)
         {
             //33rd step.
