@@ -9,7 +9,7 @@ namespace Ufuk.Services.ProductAPI.Repository
     //20th step.
     public class ProductRepository : IProductRepository
     {
-        //21th step.
+        //21st step.
         private readonly ApplicationDbContext _db;
         private IMapper _mapper;
         public ProductRepository(ApplicationDbContext db, IMapper mapper)
@@ -34,7 +34,7 @@ namespace Ufuk.Services.ProductAPI.Repository
             return _mapper.Map<Product, ProductDto>(product);
         }
 
-        //23th step.
+        //23rd step.
         public async Task<bool> DeleteProduct(int productId)
         {
             try
@@ -54,7 +54,7 @@ namespace Ufuk.Services.ProductAPI.Repository
             }
         }
 
-        //22th step.
+        //22nd step.
         public async Task<ProductDto> GetProductById(int productId)
         {
             Product product = await _db.Products.Where(x => x.ProductId == productId).FirstOrDefaultAsync();
