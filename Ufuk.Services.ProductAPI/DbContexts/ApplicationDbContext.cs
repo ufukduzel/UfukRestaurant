@@ -18,5 +18,11 @@ namespace Ufuk.Services.ProductAPI.DbContexts
         //Package Manager Console (Default project: Services\Ufuk.Services.ProductAPI)
         //add-migration AddProductModelToDb
         //update-database
+
+        //37th step.
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
