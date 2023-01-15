@@ -31,7 +31,7 @@ namespace Ufuk.Services.ProductAPI.DbContexts
                 Name = "Samosa",
                 Price = 15,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "url",
+                ImageUrl = "https://dotnetmastery.blob.core.windows.net/mango/14.jpg", //40th step.
                 CategoryName = "Appetizer"
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -40,7 +40,7 @@ namespace Ufuk.Services.ProductAPI.DbContexts
                 Name = "Paneer Tikka",
                 Price = 13.99,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "url",
+                ImageUrl = "https://dotnetmastery.blob.core.windows.net/mango/12.jpg", //41st step.
                 CategoryName = "Appetizer"
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -49,7 +49,7 @@ namespace Ufuk.Services.ProductAPI.DbContexts
                 Name = "Sweet Pie",
                 Price = 10.99,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "url",
+                ImageUrl = "https://dotnetmastery.blob.core.windows.net/mango/11.jpg", //42nd step.
                 CategoryName = "Dessert"
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -58,7 +58,7 @@ namespace Ufuk.Services.ProductAPI.DbContexts
                 Name = "Pav Bhaji",
                 Price = 15,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "url",
+                ImageUrl = "https://dotnetmastery.blob.core.windows.net/mango/13.jpg", //43rd step.
                 CategoryName = "Entree"
             });
 
@@ -97,7 +97,15 @@ namespace Ufuk.Services.ProductAPI.DbContexts
             //Selected Files: (Let's select the files here.)
             //And upload them.
             //So now we have images that are available on the 'azure blob storage'
-            //When you try to access 
+            //When you try to access that based on the url, you will see ResourceNotFound
+            //Even though that resources is available, it does not have the permission.
+            //'mango' container   ->   Set Public Access Level...   ->
+            //Set Container Public Access Level   ->   Public read access for blobs only
+
+            //44th step.
+            //Package Manager Console
+            //add-migration SeedProducts
+            //update-database
         }
     }
 }
