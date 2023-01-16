@@ -1,9 +1,8 @@
-﻿namespace Ufuk.Web.Models
+﻿namespace Ufuk.Web.Models //52nd step.
 {
     //51st step.
     public class ResponseDto
     {
-        //15th step.
         public bool IsSuccess { get; set; } = true;
         public object Result { get; set; }
         public string DisplayMessage { get; set; } = "";
