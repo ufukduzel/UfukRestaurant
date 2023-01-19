@@ -7,7 +7,8 @@ namespace Ufuk.Web.Services
     public class BaseService : IBaseService
     {
         // 59th step.
-        public ResponseDto responseModel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ResponseDto responseModel { get; set; } // 61st step.
+        public IHttpClientFactory httpClient { get; set; } // 62nd step.
 
         public Task<T> SendAsync<T>(ApiRequest apiRequest)
         {
