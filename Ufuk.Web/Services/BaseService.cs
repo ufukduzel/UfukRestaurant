@@ -9,14 +9,15 @@ namespace Ufuk.Web.Services
         // 59th step.
         public ResponseDto responseModel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public void Dispose()
+        public Task<T> SendAsync<T>(ApiRequest apiRequest)
         {
             throw new NotImplementedException();
         }
 
-        public Task<T> SendAsync<T>(ApiRequest apiRequest)
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            // 60th step.
+            GC.SuppressFinalize(true);
         }
     }
 }
