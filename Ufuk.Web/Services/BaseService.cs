@@ -10,6 +10,13 @@ namespace Ufuk.Web.Services
         public ResponseDto responseModel { get; set; } // 61st step.
         public IHttpClientFactory httpClient { get; set; } // 62nd step.
 
+        // 63rd step.
+        public BaseService(IHttpClientFactory httpClient)
+        {
+            this.responseModel = new ResponseDto();
+            this.httpClient = httpClient;
+        }
+
         public Task<T> SendAsync<T>(ApiRequest apiRequest)
         {
             throw new NotImplementedException();
