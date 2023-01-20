@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
 using Ufuk.Web.Models;
 using Ufuk.Web.Services.IServices;
@@ -29,6 +30,12 @@ namespace Ufuk.Web.Services
                 message.Headers.Add("Accept", "application/json");
                 message.RequestUri = new Uri(apiRequest.Url);
                 client.DefaultRequestHeaders.Clear();
+                // 65th step.
+                if (apiRequest.Data != null)
+                {
+                    // Install package 'Newtonsoft.Json' (for JsonConvert)
+                    message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data), Encoding.UTF8, "application/json");
+                }
             }
             catch (Exception e)
             {
