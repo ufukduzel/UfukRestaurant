@@ -20,6 +20,7 @@ namespace Ufuk.Web.Services
             this.httpClient = httpClient;
         }
 
+        // We have the "async" keyword inside our method.
         public async Task<T> SendAsync<T>(ApiRequest apiRequest)
         {
             // 64th step.
@@ -62,8 +63,16 @@ namespace Ufuk.Web.Services
             }
             catch (Exception e)
             {
-
-                throw;
+                // 67th step.
+                var dto = new ResponseDto
+                {
+                    DisplayMessage = "Error",
+                    ErrorMessage = new List<string> { Convert.ToString(e.Message) },
+                    IsSuccess = false
+                };
+                var res = JsonConvert.SerializeObject(dto);
+                var apiResponseDto = JsonConvert.DeserializeObject<T>(res);
+                return apiResponseDto;
             }
         }
 
