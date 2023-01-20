@@ -1,4 +1,6 @@
-﻿using Ufuk.Web.Models;
+﻿using System.Text;
+using System.Text.Json.Serialization;
+using Ufuk.Web.Models;
 using Ufuk.Web.Services.IServices;
 
 namespace Ufuk.Web.Services
@@ -19,7 +21,20 @@ namespace Ufuk.Web.Services
 
         public Task<T> SendAsync<T>(ApiRequest apiRequest)
         {
-            throw new NotImplementedException();
+            // 64th step.
+            try
+            {
+                var client = httpClient.CreateClient("UfukAPI");
+                HttpRequestMessage message = new HttpRequestMessage();
+                message.Headers.Add("Accept", "application/json");
+                message.RequestUri = new Uri(apiRequest.Url);
+                client.DefaultRequestHeaders.Clear();
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
         }
 
         public void Dispose()
