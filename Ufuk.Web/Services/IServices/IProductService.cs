@@ -3,7 +3,7 @@
 namespace Ufuk.Web.Services.IServices
 {
     //48th step.
-    public interface IProductService
+    public interface IProductService : IBaseService // 68th step.
     {
         //53rd step.
         Task<T> GetAllProductsAsync<T>();
