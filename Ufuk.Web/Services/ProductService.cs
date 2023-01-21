@@ -14,9 +14,17 @@ namespace Ufuk.Web.Services
         }
 
         // 70th step.
-        public Task<T> CreateProductAsync<T>(ProductDto productDto)
+        public async Task<T> CreateProductAsync<T>(ProductDto productDto)
         {
-            throw new NotImplementedException();
+            // 72nd step.
+            // We need the 'async' keyword.
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.POST,
+                Data = productDto,
+                Url = SD.ProductAPIBase + "/api/products",
+                AccessToken = ""
+            });
         }
 
         public Task<T> DeleteProductAsync<T>(int id)
