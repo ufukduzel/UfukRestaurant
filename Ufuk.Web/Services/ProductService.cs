@@ -27,14 +27,27 @@ namespace Ufuk.Web.Services
             });
         }
 
-        public Task<T> DeleteProductAsync<T>(int id)
+        public async Task<T> DeleteProductAsync<T>(int id)
         {
-            throw new NotImplementedException();
+            // 73rd step.
+            // We need to add an 'async' keyword.
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.DELETE,
+                Url = SD.ProductAPIBase + "/api/products/" + id,
+                AccessToken = ""
+            });
         }
 
-        public Task<T> GetAllProductsAsync<T>()
+        public async Task<T> GetAllProductsAsync<T>()
         {
-            throw new NotImplementedException();
+            // 74th step.
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.GET,
+                Url = SD.ProductAPIBase + "/api/products",
+                AccessToken = ""
+            });
         }
 
         public Task<T> GetProductByIdAsync<T>(int id)
