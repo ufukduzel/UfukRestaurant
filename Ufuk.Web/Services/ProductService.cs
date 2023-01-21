@@ -50,14 +50,27 @@ namespace Ufuk.Web.Services
             });
         }
 
-        public Task<T> GetProductByIdAsync<T>(int id)
+        public async Task<T> GetProductByIdAsync<T>(int id)
         {
-            throw new NotImplementedException();
+            // 75th step.
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.GET,
+                Url = SD.ProductAPIBase + "/api/products/" + id,
+                AccessToken = ""
+            });
         }
 
-        public Task<T> UpdateProductAsync<T>(ProductDto productDto)
+        public async Task<T> UpdateProductAsync<T>(ProductDto productDto)
         {
-            throw new NotImplementedException();
+            // 76th step.
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.PUT,
+                Data = productDto,
+                Url = SD.ProductAPIBase + "/api/products",
+                AccessToken = ""
+            });
         }
     }
 }
