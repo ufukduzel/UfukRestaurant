@@ -1,10 +1,26 @@
 //1st step.
 
-var builder = WebApplication.CreateBuilder(args);
+using Ufuk.Web;
+using Ufuk.Web.Services;
+using Ufuk.Web.Services.IServices;
 
+var builder = WebApplication.CreateBuilder(args);
+//
+
+// 77th step.
+builder.Services.AddHttpClient<IProductService, ProductService>();
+SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
+
+builder.Services.AddScoped<IProductService, ProductService>();
+
+//
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//
 
+
+
+//
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
