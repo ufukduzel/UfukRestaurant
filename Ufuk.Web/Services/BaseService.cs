@@ -55,7 +55,10 @@ namespace Ufuk.Web.Services
                         message.Method = HttpMethod.Get;
                         break;
                 }
-                apiResponse = await client.SendAsync(message);
+                apiResponse = await client.SendAsync(message); // A debugging point for API Call.
+                //Here we are configuring everything and we have the response right here.
+                //The best place to debug is the BaseService
+                //because that is where the call is being made.
 
                 var apiContent = await apiResponse.Content.ReadAsStringAsync();
                 var apiResponseDto = JsonConvert.DeserializeObject<T>(apiContent);

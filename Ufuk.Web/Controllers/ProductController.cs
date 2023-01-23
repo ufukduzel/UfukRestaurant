@@ -20,7 +20,7 @@ namespace Ufuk.Web.Controllers
         {
             //List<ProductDto> list = new List<ProductDto>(); // We can just use new() with new C#.
             // 96th step.
-            List<ProductDto> list = new();
+            List<ProductDto> list = new(); // A debugging point for API Call.
             var response = await _productService.GetAllProductsAsync<ResponseDto>();
             if (response != null && response.IsSuccess)
             {
