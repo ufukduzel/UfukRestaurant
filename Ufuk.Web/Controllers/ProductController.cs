@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Ufuk.Web.Models;
 using Ufuk.Web.Services.IServices;
 
@@ -17,8 +18,15 @@ namespace Ufuk.Web.Controllers
         // 94th step.
         public async Task<IActionResult> ProductIndex() // 95th step.
         {
-            List<ProductDto> list = new List<ProductDto>();
-            return View();
+            //List<ProductDto> list = new List<ProductDto>(); // We can just use new() with new C#.
+            // 96th step.
+            List<ProductDto> list = new();
+            var response = await _productService.GetAllProductsAsync<ResponseDto>();
+            if (response != null && response.IsSuccess)
+            {
+                list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
+            }
+            return View(list);
         }
     }
 }
