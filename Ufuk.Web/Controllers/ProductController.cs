@@ -29,5 +29,11 @@ namespace Ufuk.Web.Controllers
             }
             return View(list);
         }
+
+        // 101st step.
+        public async Task<IActionResult> ProductCreate()
+        {
+            return View();
+        }
     }
 }
