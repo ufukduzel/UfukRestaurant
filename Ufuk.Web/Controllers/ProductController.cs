@@ -31,7 +31,7 @@ namespace Ufuk.Web.Controllers
         }
 
         // 101st step.
-        public async Task<IActionResult> ProductCreate()
+        public async Task<IActionResult> ProductCreate() // 102nd step. (Razor View - Empty)
         {
             return View();
         }
