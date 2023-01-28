@@ -61,5 +61,20 @@ namespace Ufuk.Web.Controllers
             }
             return NotFound();
         }
+        // 110th step.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ProductEdit(ProductDto model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = await _productService.UpdateProductAsync<ResponseDto>(model);
+                if (response != null && response.IsSuccess)
+                {
+                    return RedirectToAction(nameof(ProductIndex));
+                }
+            }
+            return View(model);
+        }
     }
 }
