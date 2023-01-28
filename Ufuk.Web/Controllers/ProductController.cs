@@ -50,5 +50,16 @@ namespace Ufuk.Web.Controllers
             }
             return View(model);
         }
+        // 109th step.
+        public async Task<IActionResult> ProductEdit(int productId)
+        {
+            var response = await _productService.GetProductByIdAsync<ResponseDto>(productId);
+            if (response != null && response.IsSuccess)
+            {
+                ProductDto model = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
+                return View(model);
+            }
+            return NotFound();
+        }
     }
 }
