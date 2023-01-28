@@ -64,7 +64,7 @@ namespace Ufuk.Web.Controllers
         // 110th step.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ProductEdit(ProductDto model)
+        public async Task<IActionResult> ProductEdit(ProductDto model) // 111th step. (Razor View - Empty)
         {
             if (ModelState.IsValid)
             {
