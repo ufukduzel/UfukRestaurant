@@ -88,5 +88,20 @@ namespace Ufuk.Web.Controllers
             }
             return NotFound();
         }
+        // 119th step.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ProductDelete(ProductDto model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = await _productService.DeleteProductAsync<ResponseDto>(model.ProductId);
+                if (response.IsSuccess)
+                {
+                    return RedirectToAction(nameof(ProductIndex));
+                }
+            }
+            return View(model);
+        }
     }
 }
