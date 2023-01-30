@@ -44,10 +44,10 @@
                     </td>
                     <td>
                         @*100th step.*@
-                        <a asp-action="EditProduct" class="btn btn-success" asp-route-productId="@item.ProductId">
+                        <a asp-action="ProductEdit" class="btn btn-success" asp-route-productId="@item.ProductId"> @*116th step.*@
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a asp-action="DeleteProduct" class="btn btn-danger" asp-route-productId="@item.ProductId">
+                        <a asp-action="ProductDelete" class="btn btn-danger" asp-route-productId="@item.ProductId"> @*117th step.*@
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>
