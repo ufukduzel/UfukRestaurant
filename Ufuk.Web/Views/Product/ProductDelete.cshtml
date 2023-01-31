@@ -1,57 +1,57 @@
-﻿@*112th step.*@
+﻿@*120th step.*@
 @model Ufuk.Web.Models.ProductDto
 
 
-<form asp-action="ProductEdit"> @*114th step.*@
-    <input asp-for="ProductId" hidden /> @*113th step.*@
+<form asp-action="ProductDelete"> @*121st step.*@
+    <input asp-for="ProductId" hidden />
     <br />
     <div class="container border p-3">
-        <h1 class="text-primary">Edit Product</h1> @*113th step.*@
+        <h1 class="text-primary">Delete Product</h1> @*122nd step.*@
 
         <hr />
         <div class="row">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
             <div class="col-2">
                 <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                @*<span asp-validation-for="Name" class="text-danger"></span>*@
             </div>
             <div class="col-2">
                 <label asp-for="CategoryName" class="control-label pt-2" style="font-size:20px;"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="CategoryName" class="form-control" />
-                <span asp-validation-for="CategoryName" class="text-danger"></span>
+                @*<span asp-validation-for="CategoryName" class="text-danger"></span>*@
             </div>
             <div class="col-2">
                 <label asp-for="Description" class="control-label pt-2" style="font-size:20px;"></label>
             </div>
             <div class="col-10 pb-3">
                 <textarea asp-for="Description" class="form-control" rows="5"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
+                @*<span asp-validation-for="Description" class="text-danger"></span>*@
             </div>
             <div class="col-2">
                 <label asp-for="ImageUrl" class="control-label pt-2" style="font-size:20px;"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                @*<span asp-validation-for="ImageUrl" class="text-danger"></span>*@
             </div>
             <div class="col-2">
                 <label asp-for="Price" class="control-label pt-2" style="font-size:20px;"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                @*<span asp-validation-for="Price" class="text-danger"></span>*@
             </div>
             <div class="col-5 offset-2">
 
                 <a asp-action="ProductIndex" class="btn-primary btn form-control ">Back to List</a>
             </div>
             <div class="col-5">
-                <input type="submit" value="Update" class="btn btn-success form-control" /> @*115th step.*@
+                <input type="submit" value="Delete" class="btn btn-danger form-control" /> @*123rd step.*@
 
             </div>
 
