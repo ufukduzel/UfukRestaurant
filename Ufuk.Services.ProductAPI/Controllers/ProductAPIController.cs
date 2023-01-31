@@ -96,6 +96,7 @@ namespace Ufuk.Services.ProductAPI.Controllers
 
         //36th step.
         [HttpDelete]
+        [Route("{id}")] // 126th step.
         public async Task<object> Delete(int id)
         {
             try
