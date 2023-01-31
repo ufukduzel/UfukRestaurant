@@ -96,7 +96,7 @@ namespace Ufuk.Web.Controllers
             if (ModelState.IsValid)
             {
                 var response = await _productService.DeleteProductAsync<ResponseDto>(model.ProductId);
-                if (response.IsSuccess)
+                if (response.IsSuccess) // 125th step. System.NullReferenceException (If response was null)
                 {
                     return RedirectToAction(nameof(ProductIndex));
                 }
