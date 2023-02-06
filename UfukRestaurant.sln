@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ufuk.Web", "Ufuk.Web\Ufuk.W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3F52D7F0-64ED-42D1-9582-D91F8F35BABC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ufuk.Services.ProductAPI", "Ufuk.Services.ProductAPI\Ufuk.Services.ProductAPI.csproj", "{AE8FBE0A-A990-4E63-81E8-1364175895BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ufuk.Services.ProductAPI", "Ufuk.Services.ProductAPI\Ufuk.Services.ProductAPI.csproj", "{AE8FBE0A-A990-4E63-81E8-1364175895BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ufuk.Services.Identity", "Ufuk.Services.Identity\Ufuk.Services.Identity.csproj", "{97CCFF96-C370-4A32-9B4B-A91BE2311E15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE8FBE0A-A990-4E63-81E8-1364175895BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97CCFF96-C370-4A32-9B4B-A91BE2311E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CCFF96-C370-4A32-9B4B-A91BE2311E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CCFF96-C370-4A32-9B4B-A91BE2311E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CCFF96-C370-4A32-9B4B-A91BE2311E15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{457E89A9-D039-4521-B9B6-34820A49D0BE} = {F252DA67-C1B4-4648-8D06-78E24AB1D7B9}
 		{AE8FBE0A-A990-4E63-81E8-1364175895BC} = {3F52D7F0-64ED-42D1-9582-D91F8F35BABC}
+		{97CCFF96-C370-4A32-9B4B-A91BE2311E15} = {3F52D7F0-64ED-42D1-9582-D91F8F35BABC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC171812-95FB-419E-AF80-DCCD02E367AC}
