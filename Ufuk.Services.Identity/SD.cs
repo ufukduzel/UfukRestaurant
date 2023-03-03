@@ -21,10 +21,24 @@ namespace Ufuk.Services.Identity
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("Ufuk", "Ufuk Server"),
+                new ApiScope("ufuk", "Ufuk Server"),
                 new ApiScope(name: "read", displayName: "Read your data."),
                 new ApiScope(name: "write", displayName: "Write your data."),
                 new ApiScope(name: "delete", displayName: "Delete your data.")
+            };
+
+        // 135th step.
+        public static IEnumerable<Client> Clients =>
+            new List<Client>
+            {
+                new Client
+                {
+                    ClientId="client",
+                    ClientSecrets={ new Secret("secret".Sha256()) },
+                    AllowedGrantTypes=GrantTypes.ClientCredentials,
+                    AllowedScopes={ "read", "write", "profile" }
+                },
+
             };
     }
 }
